@@ -8,7 +8,7 @@
 # Site settings
 title: Paris Holley | The grown up wonder child
 email: mail@parisholley.com
-description: > Peek inside the mind of a entrepreneur, musician, programmer, photographer who can't figure out what he wants to be when he grows up.
+description: Peek inside the mind of a entrepreneur, musician, programmer, photographer who can't figure out what he wants to be when he grows up.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.parisholley.com" # the base hostname & protocol for your site
 twitter_username: parisholley
