@@ -1,5 +1,7 @@
-body, html{
-	overflow-x: hidden;
+html, body{
+	@include media-query($on-palm) {
+		overflow-x: hidden;
+	}
 }
 
 .header {
