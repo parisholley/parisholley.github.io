@@ -45,6 +45,8 @@ html, body{
 }
 
 .role{
+	$height: 365px;
+
 	&--entre{
 		position: relative;
 		z-index: 10;
@@ -126,7 +128,9 @@ html, body{
 		@media screen and (min-width: $on-palm + 1) {
 			max-width: 400px;
 			align-self: flex-end;
-
+			max-height: $height;
+			overflow-y:hidden;
+			
 			&__bg{
 				left: -50px;
 			}
@@ -165,7 +169,7 @@ html, body{
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
-		min-height: 365px;
+		min-height: $height;
 		position: relative;
 
 		@media screen and (max-width: $on-palm) {
@@ -173,7 +177,7 @@ html, body{
 		}
 
 		@media screen and (min-width: $content-width) {
-			max-height: 365px;
+			max-height: $height;
 		}
 	}
 }
