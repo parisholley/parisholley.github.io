@@ -1,0 +1,173 @@
+.header {
+	position: relative;
+	z-index: 11;
+    background: #000000;
+
+	.wrapper{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		height: 85px;
+
+		@include media-query($on-palm){
+			flex-direction: column;
+			padding: 20px 0;
+		}
+	}
+
+	&__logo{
+		flex: 1;
+
+		img {
+			max-width: 275px;
+			max-height: 40px;
+		}
+	}
+
+	&__icon{
+		color: #fff;
+		font-size: 20px;
+
+		& + &{
+			margin-left: 20px;
+		}
+
+		&:hover{
+			color: #7e7e7e;
+		}
+	}
+}
+
+.role{
+	&--entre{
+		position: relative;
+		z-index: 10;
+		background: $color-entre;
+		color: $color-entre-text;
+
+		.role__button{
+			background: $color-entre-button;
+		}
+	}
+
+	&--prog{
+		position: relative;
+		z-index: 9;
+		background: $color-prog;
+		color: $color-prog-text;
+
+		.role__button{
+			background: $color-prog-button;
+		}
+	}
+
+	&--music{
+		position: relative;
+		z-index: 8;
+		background: $color-music;
+		color: $color-music-text;
+
+		.role__button{
+			background: $color-music-button;
+		}
+	}
+
+	&--photo{
+		position: relative;
+		z-index: 7;
+		background: $color-photo;
+		color: $color-photo-text;
+
+		.role__button{
+			background: $color-photo-button;
+		}
+	}
+
+	&__button{
+		width: 150px;
+		height: 50px;
+		color: white;
+		text-decoration: none;
+		display: inline-block;
+		line-height: 50px;
+		text-align: center;
+		font-size: 18px;
+		text-transform: uppercase;
+		margin-top: 30px;
+
+		&:hover{
+			color: black;
+			background: white;
+		}
+	}
+
+	&__image{
+		flex: 1;
+
+		&__main{
+			z-index: 1;
+			position: relative;
+		}
+
+		&__bg{
+			position: absolute;
+			z-index: 0;
+			bottom: 0;
+			max-width: 125%;
+			left: -10%;
+		}
+
+		@media screen and (min-width: $on-palm + 1) {
+			max-width: 400px;
+			align-self: flex-end;
+
+			&__bg{
+				left: -50px;
+			}
+		}
+
+		@media screen and (max-width: $on-palm) {
+			position: relative;
+		}
+	}
+
+	&__title{
+		font-size: 45px;
+		line-height: 45px;
+		color: white;
+		font-family: $base-font-family-light;
+	}
+
+	&__desc{
+		font-size: 18px;
+		line-height: 28px;
+		margin-top: 15px;
+	}
+
+	&__content{
+		flex: 1;
+		z-index: 1;
+		position: relative;
+		padding: 30px 0;
+
+		@media screen and (max-width: $on-palm) {
+			text-align: center;
+		}
+	}
+
+	.wrapper{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		min-height: 365px;
+		position: relative;
+
+		@media screen and (max-width: $on-palm) {
+			flex-direction: column;
+		}
+
+		@media screen and (min-width: $content-width) {
+			max-height: 365px;
+		}
+	}
+}
