@@ -6,6 +6,7 @@
 
 $base-font-family: 'ProximaNova-Regular', Georgia, sans-serif;
 $base-font-family-light: 'ProximaNova-Light', Georgia, sans-serif;
+$base-font-family-bold: 'ProximaNova-Bold', Georgia, sans-serif;
 $base-font-size: 16px;
 $base-font-weight: 400;
 $small-font-size: $base-font-size * 0.875;
@@ -50,4 +51,5 @@ $on-laptop: 800px;
 }
 
 @import "base",
+"wysiwyg",
 "layout";

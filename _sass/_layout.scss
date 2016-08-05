@@ -1,27 +1,31 @@
-html, body{
+html, body {
 	@include media-query($on-palm) {
 		overflow-x: hidden;
 	}
 }
 
+.page{
+	padding: 20px 0;
+}
+
 .header {
 	position: relative;
 	z-index: 11;
-    background: #000000;
+	background: #000000;
 
-	.wrapper{
+	.wrapper {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
 		height: 85px;
 
-		@include media-query($on-palm){
+		@include media-query($on-palm) {
 			flex-direction: column;
 			padding: 20px 0;
 		}
 	}
 
-	&__logo{
+	&__logo {
 		flex: 1;
 
 		img {
@@ -30,68 +34,68 @@ html, body{
 		}
 	}
 
-	&__icon{
+	&__icon {
 		color: #fff;
 		font-size: 20px;
 
-		& + &{
+		& + & {
 			margin-left: 20px;
 		}
 
-		&:hover{
+		&:hover {
 			color: #7e7e7e;
 		}
 	}
 }
 
-.role{
+.role {
 	$height: 365px;
 
-	&--entre{
+	&--entre {
 		position: relative;
 		z-index: 10;
 		background: $color-entre;
 		color: $color-entre-text;
 
-		.role__button{
+		.role__button {
 			background: $color-entre-button;
 		}
 	}
 
-	&--prog{
+	&--prog {
 		position: relative;
 		z-index: 9;
 		background: $color-prog;
 		color: $color-prog-text;
 
-		.role__button{
+		.role__button {
 			background: $color-prog-button;
 		}
 	}
 
-	&--music{
+	&--music {
 		position: relative;
 		z-index: 8;
 		background: $color-music;
 		color: $color-music-text;
 
-		.role__button{
+		.role__button {
 			background: $color-music-button;
 		}
 	}
 
-	&--photo{
+	&--photo {
 		position: relative;
 		z-index: 7;
 		background: $color-photo;
 		color: $color-photo-text;
 
-		.role__button{
+		.role__button {
 			background: $color-photo-button;
 		}
 	}
 
-	&__button{
+	&__button {
 		width: 150px;
 		height: 50px;
 		color: white;
@@ -103,71 +107,85 @@ html, body{
 		text-transform: uppercase;
 		margin-top: 30px;
 
-		&:hover{
+		&:hover {
 			color: black;
 			background: white;
 		}
 	}
 
-	&__image{
+	&__image {
 		flex: 1;
+		display: flex;
 
-		&__main{
-			z-index: 1;
-			position: relative;
-		}
-
-		&__bg{
+		&__bg {
 			position: absolute;
 			z-index: 0;
 			bottom: 0;
-			max-width: 125%;
-			left: -10%;
+			top: 0;
+			left: 0;
+			right: 0;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+		&__wrapper {
+			flex: 1;
+			z-index: 1;
+			position: relative;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center bottom;
 		}
 
 		@media screen and (min-width: $on-palm + 1) {
 			max-width: 400px;
-			align-self: flex-end;
-			max-height: $height;
-			overflow-y:hidden;
+			//max-height: $height;
+			overflow-y: hidden;
 
-			&__bg{
-				left: -50px;
+			&__bg {
+				background-size: contain;
+				background-position: left center;
 			}
 		}
 
 		@media screen and (max-width: $on-palm) {
 			position: relative;
+
+			&__wrapper {
+				height: 200px;
+			}
 		}
 	}
 
-	&__title{
+	&__title {
 		font-size: 45px;
 		line-height: 45px;
 		color: white;
 		font-family: $base-font-family-light;
 	}
 
-	&__desc{
+	&__desc {
 		font-size: 18px;
 		line-height: 28px;
 		margin-top: 15px;
 	}
 
-	&__content{
+	&__content {
 		flex: 1;
 		z-index: 1;
 		position: relative;
 		padding: 30px 0;
+		align-self: center;
 
 		@media screen and (max-width: $on-palm) {
 			text-align: center;
 		}
 	}
 
-	.wrapper{
+	.wrapper {
 		display: flex;
-		align-items: center;
+		align-items: stretch;
 		justify-content: space-around;
 		min-height: $height;
 		position: relative;
@@ -178,6 +196,34 @@ html, body{
 
 		@media screen and (min-width: $content-width) {
 			max-height: $height;
+		}
+	}
+
+	&--small {
+		$height: 150px;
+
+		.wrapper {
+			min-height: $height;
+		}
+
+		@media screen and (min-width: $on-palm + 1) {
+			.role__image {
+				max-width: 300px;
+
+				&__bg {
+					background-size: initial;
+				}
+			}
+		}
+
+		@media screen and (max-width: $on-palm) {
+			.role__image {
+				position: initial;
+
+				&__wrapper {
+					display: none;
+				}
+			}
 		}
 	}
 }
